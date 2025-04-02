@@ -1,0 +1,11 @@
+{
+    "admin_estate_reload": {
+        "group": "Estate management",
+        "description": "remotely allows to reload estate settings of all regions in the simulator. This can be used to update the estate settings if they have changed on another simulator or database.",
+        "ReturnedParameters": "<table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tbody><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> <i>success</i></td><td> true when successfull</td><td> true, false</td></tr></tbody></table>",
+        "ErrorMessages": "",
+        "Notes": "<ul><li> From commit 90f03c on Mon 6 May 2013 (OpenSimulator 0.7.5-dev)</li></ul>",
+        "Required": "No required parameters",
+        "Optional": "No optional parameters"
+    }
+} 

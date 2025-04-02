@@ -1,0 +1,89 @@
+{
+    "admin_teleport_agent": {
+        "group": "Agent management",
+        "description": "remotely teleport an agent to a given region and/or position",
+        "ReturnedParameters": "<table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tbody><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> <i>success</i></td><td></td><td> true</td></tr></tbody></table>",
+        "ErrorMessages": "No error messages",
+        "Notes": "From commit 415b7b7 on Wed 7 Dec 2011 (OpenSimulator 0.7.3-dev)",
+        "Required": {
+            "region_name": {
+                "default": "",
+                "type":  "string",
+                "description": "Name of the new region"
+            },
+            "agent_id": {
+                "default": "",
+                "type":  "uuid",
+                "description": "agent uuid, optionaly agent_first_name and agent_last_name"
+            }
+        },
+        "Optional": {
+            "agent_first_name": {
+                "default": "",
+                "type":  "string",
+                "description": "first name of agent"
+            },
+            "agent_last_name": {
+                "default": "",
+                "type":  "string",
+                "description": "last name of agent"
+            },
+            "pos_x": {
+                "default": "",
+                "type":  "int",
+                "description": "teleport to region position x"
+            },
+            "pos_y": {
+                "default": "",
+                "type":  "int",
+                "description": "teleport to region position y"
+            },
+            "pos_z": {
+                "default": "",
+                "type":  "int",
+                "description": "teleport to region position z"
+            },
+            "lookat_x": {
+                "default": "",
+                "type":  "int",
+                "description": "look in direction x"
+            },
+            "lookat_y": {
+                "default": "",
+                "type":  "int",
+                "description": "look in direction y"
+            },
+            "lookat_z": {
+                "default": "",
+                "type":  "int",
+                "description": "look in direction z"
+            }
+        }
+    },
+    "admin_get_agents": {
+        "group": "Agent management",
+        "description": "get information about agents in a given region",
+        "ReturnedParameters": "<h3> <span class=\"mw-headline\" id=\"Root\">Root</span></h3><table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> <i>success</i></td><td></td><td> true</td></tr><tr><td> <i>regions</i> </td><td> Regions for which information is returned. </td><td> See regions</td></tr></table><h3> <span class=\"mw-headline\" id=\"Regions\">Regions</span></h3><table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> name </td><td> Name of region </td><td></td></tr><tr><td> id </td><td> UUID of region </td><td></td></tr><tr><td> agents </td><td> Agents found in the region requested. </td><td> See agents</td></tr></table><h3> <span class=\"mw-headline\" id=\"Agents\">Agents</span></h3><table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> name </td><td> Name of agent </td><td></td></tr><tr><td> type </td><td> Type of agent </td><td> Npc or User</td></tr><tr><td> id </td><td> UUID of agent </td><td></td></tr><tr><td> current_parcel_id </td><td> UUID of parcel the agent is currently over </td><td></td></tr><tr><td> pos_x </td><td> X position of the agent </td><td></td></tr><tr><td> pos_y </td><td> Y position of the agent </td><td></td></tr><tr><td> pos_z </td><td> Z position of the agent </td><td></td></tr><tr><td> vel_x </td><td> X velocity of the agent </td><td></td></tr><tr><td> vel_y </td><td> Y velocity of the agent </td><td></td></tr><tr><td> vel_z </td><td> Z velocity of the agent </td><td></td></tr><tr><td> lookat_x </td><td> X gaze direction of the agent </td><td></td></tr><tr><td> lookat_y </td><td> X gaze direction of the agent </td><td></td></tr><tr><td> lookat_z </td><td> X gaze direction of the agent </td><td></td></tr><tr><td> is_sat_on_ground </td><td> true if the agent is sat on the ground </td><td></td></tr><tr><td> is_sat_on_object </td><td> true if the agent is sat on an object </td><td></td></tr><tr><td> is_flying </td><td> true if the agent is flying </td><td></td></tr></table>",
+        "ErrorMessages": "No error messages",
+        "Notes": "This was introduced in git master commit 3072f25 (OpenSimulator 0.7.6 development).",
+        "Required": {
+            "region_name": {
+                "default": "",
+                "type":  "string",
+                "description": "Name of the region to look for agents (or region_id below)"
+            },
+            "region_id": {
+                "default": "",
+                "type":  "uuid",
+                "description": "UUID of the region to look for agents (or region_name above)"
+            }
+        },
+        "Optional": {
+            "include_children": {
+                "default": "",
+                "type":  "boolean",
+                "description": "If true, then return information about child agents as well as root agents."
+            }
+        }
+    }
+}

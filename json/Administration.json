@@ -1,0 +1,17 @@
+{
+    "admin_console_command": {
+        "group": "Administration",
+        "description": "remotely allows to send commands to the console. <br>Caution ! This function gives full permission to execute all available console commands!",
+        "ReturnedParameters": "",
+        "ErrorMessages": "",
+        "Notes": "A list of availiable commands is at: <a href=\"http://opensimulator.org/wiki/Server_Commands\" target=\"_new\">http://opensimulator.org/wiki/Server_Commands</a><br>Some examples:<ul><li>show regions</li><li>monitor report</li></ul>",
+        "Required": {
+            "command": {
+                "default": "",
+                "type":  "string",
+                "description": "console command"
+            }
+        },
+        "Optional": "No optional parameters"
+    }
+}

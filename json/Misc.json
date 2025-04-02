@@ -1,0 +1,108 @@
+{
+    "admin_dialog": {
+        "group": "Misc",
+        "description": "Send a notification to users in a region.",
+        "ReturnedParameters": {
+            "accepted": {
+                "type": "boolean",
+                "description": "Indicates whether the request was accepted."
+            },
+            "success": {
+                "type": "boolean",
+                "description": "Indicates whether the request was successful."
+            }
+        },
+        "Required": {
+            "message": {
+                "type": "string",
+                "description": "The message to broadcast."
+            },
+            "from": {
+                "type": "string",
+                "description": "UUID of the sender."
+            }
+        },
+        "Optional": "No optional parameters"
+    },
+    "admin_reset_land": {
+        "group": "Misc",
+        "description": "Reset land settings, including music URL, group ID, and flags.",
+        "ReturnedParameters": {
+            "success": {
+                "type": "boolean",
+                "description": "Indicates whether the request was successful."
+            }
+        },
+        "Required": {},
+        "Optional": {
+            "group": {
+                "type": "string",
+                "description": "UUID of the group to set."
+            },
+            "music": {
+                "type": "string",
+                "description": "Music URL for the parcel."
+            },
+            "flags": {
+                "type": "integer",
+                "description": "Region flags to set."
+            }
+        }
+    },
+    "admin_refresh_search": {
+        "group": "Misc",
+        "description": "Refresh the search module.",
+        "ReturnedParameters": {
+            "success": {
+                "type": "boolean",
+                "description": "Indicates whether the request was successful."
+            }
+        },
+        "Required": {},
+        "Optional": "No optional parameters"
+    },
+    "admin_refresh_map": {
+        "group": "Misc",
+        "description": "Refresh the region's map tile.",
+        "ReturnedParameters": {
+            "success": {
+                "type": "boolean",
+                "description": "Indicates whether the request was successful."
+            }
+        },
+        "Required": {},
+        "Optional": "No optional parameters"
+    },
+    "admin_get_opensim_version": {
+        "group": "Misc",
+        "description": "Retrieve the OpenSim version number.",
+        "ReturnedParameters": {
+            "version": {
+                "type": "string",
+                "description": "The OpenSim version string."
+            },
+            "success": {
+                "type": "boolean",
+                "description": "Indicates whether the request was successful."
+            }
+        },
+        "Required": {},
+        "Optional": "No optional parameters"
+    },
+    "admin_get_agent_count": {
+        "group": "Misc",
+        "description": "Get the number of agents in a region.",
+        "ReturnedParameters": {
+            "count": {
+                "type": "integer",
+                "description": "Number of agents in the region."
+            },
+            "success": {
+                "type": "boolean",
+                "description": "Indicates whether the request was successful."
+            }
+        },
+        "Required": {},
+        "Optional": "No optional parameters"
+    }
+}

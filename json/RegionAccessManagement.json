@@ -1,0 +1,96 @@
+{
+    "admin_acl_list": {
+        "group": "Region access management",
+        "description": "remotely allows to retrieve a list of users who can access the region",
+        "ReturnedParameters": "<table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tbody><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> <i>success</i></td><td> true when successfull</td><td> true, false</td></tr><tr><td> <i>users</i></td><td> list of users allowed access</td><td></td></tr></tbody></table>",
+        "ErrorMessages": "",
+        "Notes": "",
+        "Required": {
+            "region_name": {
+                "default": "",
+                "type":  "string",
+                "description": "Name of the new region, optionaly region_uuid"
+            }
+        },
+        "Optional": {
+            "region_id": {
+                "default": "",
+                "type":  "uuid",
+                "description": "region uuid"
+            }
+        }
+    },
+    "admin_acl_clear": {
+        "group": "Region access management",
+        "description": "remotely allows to clear the access list for the region",
+        "ReturnedParameters": "<table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tbody><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> <i>success</i></td><td> true when successfull</td><td> true, false</td></tr></tbody></table>",
+        "ErrorMessages": "",
+        "Notes": "",
+        "Required": {
+            "region_name": {
+                "default": "",
+                "type":  "string",
+                "description": "Name of the new region, optionaly region_uuid"
+            }
+        },
+        "Optional": {
+            "region_id": {
+                "default": "",
+                "type":  "uuid",
+                "description": "region uuid"
+            }
+        }
+    },
+    "admin_acl_add": {
+        "group": "Region access management",
+        "description": "remotely allows to add a list of users to the access control list",
+        "ReturnedParameters": "<table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tbody><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> <i>added</i></td><td> list of user uuids added</td><td></td></tr></tbody></table>",
+        "ErrorMessages": "",
+        "Notes": "",
+        "Required": {
+            "region_name": {
+                "default": "",
+                "type":  "string",
+                "description": "Name of the new region, optionaly region_uuid"
+            },
+            "users": {
+                "default": "",
+                "type":  "string",
+                "description": "list of users names. eg. \"Jon Doe\""
+            }
+        },
+        "Optional": {
+            "region_id": {
+                "default": "",
+                "type":  "uuid",
+                "description": "region uuid"
+            }
+        }            
+    },
+    "admin_acl_remove": {
+        "group": "Region access management",
+        "description": "remotely allows to remove a list of users from the access control list",
+        "ReturnedParameters": "<table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tbody><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> <i>success</i></td><td> true when successfull</td><td> true, false</td></tr><tr><td> <i>removed</i></td><td> number count of removed users</td><td></td></tr></tbody></table>",
+        "ErrorMessages": "",
+        "Notes": "",
+        "Required": {
+            "region_name": {
+                "default": "",
+                "type":  "string",
+                "description": "Name of the new region, optionaly region_uuid"
+            },
+            "users": {
+                "default": "",
+                "type":  "string",
+                "description": "list of users names. eg. \"Jon Doe\""
+            }
+        },
+        "Optional": {
+            "region_id": {
+                "default": "",
+                "type":  "uuid",
+                "description": "region uuid"
+            }
+        }  
+    }
+}

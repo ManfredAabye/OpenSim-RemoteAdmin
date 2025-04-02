@@ -1,25 +1,37 @@
-# OpenSim-RemoteAdmin
-OpenSim RemoteAdmin php script
+# **OpenSim-RemoteAdmin**  
 
-Description:
+OpenSim RemoteAdmin PHP-Skript  
 
-A php script to easy access the remote admin functionality in opensim.
+## **Beschreibung:**
 
-Install:
+Ein PHP-Skript zur einfachen Nutzung der Remote-Admin-Funktionalität in OpenSim.  
 
-Read the documentation on http://opensimulator.org/wiki/RemoteAdmin on how to enable the remote admin.
+## **Installation:**  
 
-Edit the config.php file, fill out the [RemoteAdmin] info and add the upload location, this should be a location opensim can read from and to who you webserver can write to.
+1. **RemoteAdmin aktivieren**  
+   Lies die Dokumentation auf **[OpenSimulator.org](http://opensimulator.org/wiki/RemoteAdmin)**, um zu erfahren, wie du die Remote-Admin-Funktion aktivierst.  
 
-Edit the .htaccesss file, point the AuthUserFile line to the the .htpassword file 
-Edit the .htpasswd file, http://www.htaccesstools.com/htpasswd-generator/
+2. **`config.php` bearbeiten**  
+   - Trage die erforderlichen Informationen im Abschnitt `[RemoteAdmin]` ein.  
+   - Lege den Speicherort für Datei-Uploads fest. Dies muss ein Verzeichnis sein, das **von OpenSim gelesen und von deinem Webserver beschrieben werden kann**.  
 
-Usage:
+3. **Sicherheitsdateien anpassen**  
+   - Bearbeite `.htaccess`, um die `AuthUserFile`-Zeile auf die `.htpasswd`-Datei zu verweisen.  
+   - Erstelle oder bearbeite `.htpasswd` zur Authentifizierung mit einem Tool wie **[htaccesstools.com](http://www.htaccesstools.com/htpasswd-generator/)**.  
 
-The script generates a list with remote admin methods from the RemoteAdmin.json file. After selecting a method it generates a form wich posts the method to the opensim server and shows the results of that post.
+## **Verwendung:**  
 
-In the RemoteAdmin.json file a default can be set in the "default": "" lines, the "type":  "" can be string, hidden, readonly, boolean, file, int or uuuid. (the int and uuid default to string)
+- Das Skript **liest die Remote-Admin-Methoden** aus der Datei `RemoteAdmin.json`.  
+- Nach Auswahl einer Methode wird **ein Formular generiert**, das die Anfrage an den OpenSim-Server sendet und die Ergebnisse anzeigt.  
 
-Disclaimer:
+## **Einstellungen in `RemoteAdmin.json`:**  
 
-Be carefull with the remoteadmin, there a methods in there wich allow to do permanent changes to your regions and usersdata. Use the enabled_methods in the [RemoteAdmin] section of opensim.ini to limit the remoteadmin to the functions you need.
+- **Standardwerte können gesetzt werden** mit `"default": ""`.  
+- **Typen der Eingabefelder:**  
+  - `string`, `hidden`, `readonly`, `boolean`, `file`, `int` oder `uuid`.  
+  - (`int` und `uuid` werden standardmäßig als `string` behandelt.)  
+
+## **Haftungsausschluss:**  
+
+⚠ **Vorsicht beim Verwenden von RemoteAdmin!** Einige Methoden erlauben **dauerhafte Änderungen** an Regionen oder Benutzerdaten.  
+🔒 Nutze die Einstellung `enabled_methods` in `[RemoteAdmin]` innerhalb der Datei `opensim.ini`, um den RemoteAdmin auf **nur die benötigten Funktionen** zu beschränken.  

@@ -1,0 +1,131 @@
+{
+    "admin_load_heightmap": {
+        "group": "Region file management",
+        "description": "remotely allows to load a hight map files to a region.",
+        "ReturnedParameters": "<table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tbody><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> <i>success</i></td><td> true when successfull</td><td> true</td></tr><tr><td><i>error</i></td><td> error message when not successfull</td><td></td></tr></tbody></table>",
+        "ErrorMessages": "<ul><li> terrain module not available</li></ul>",
+        "Notes": "<ul><li> Terrain files can also be loaded via web, were the filename is the full webadress.</li><li> <i>accepted</i> is an returned parameter, probably used prior to <i>success</i></li></ul>",
+        "Required": {
+            "region_name": {
+                "default": "",
+                "type":  "string",
+                "description": "Name of the region, optionaly use region_id"
+            },
+            "filename": {
+                "default": "",
+                "type":  "file",
+                "description": "file name of terrain file"
+            }
+        },
+        "Optional": {
+            "region_id": {
+                "default": "",
+                "type":  "uuid",
+                "description": "region uuid of the region."
+            }
+        }
+    },    
+     "admin_load_oar": {
+        "group": "Region file management",
+        "description": "remotely allows to load a saved OAR file into a region",
+        "ReturnedParameters": "<table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tbody><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> <i>loaded</i></td><td> true when successfully loaded file</td><td> true, false</td></tr></tbody></table>",
+        "ErrorMessages": "",
+        "Notes": "",
+        "Required": {
+            "region_name": {
+                "default": "",
+                "type":  "string",
+                "description": "Name of the region, optionaly use region_id"
+            },
+            "filename": {
+                "default": "",
+                "type":  "file",
+                "description": "file name of terrain file"
+            }
+        },
+        "Optional": {
+            "region_id": {
+                "default": "",
+                "type":  "uuid",
+                "description": "region uuid of the region."
+            },
+            "merge": {
+                "default": "",
+                "type":  "boolean",
+                "description": "merge oar with the existing region objects"
+            },
+            "skip-assets": {
+                "default": "",
+                "type":  "boolean",
+                "description": "skip loading assets to region objects"
+            }            
+        }
+    },
+    "admin_save_heightmap": {
+        "group": "Region file management",
+        "description": "remotely allows to save a hight map of the regions to file.",
+        "ReturnedParameters": "<table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tbody><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> <i>success</i></td><td> true when successfull</td><td> true</td></tr></tbody></table>",
+        "ErrorMessages": "",
+        "Notes": "<ul><li> <i>accepted</i> is an returned parameter, probably used prior to <i>success</i></li></ul>",
+        "Required": {
+            "region_name": {
+                "default": "",
+                "type":  "string",
+                "description": "Name of the region, optionaly use region_id"
+            },
+            "filename": {
+                "default": "",
+                "type":  "string",
+                "description": "file name of terrain file"
+            }
+        },
+        "Optional": {
+            "region_id": {
+                "default": "",
+                "type":  "uuid",
+                "description": "region uuid of the region."
+            }
+        }
+    },
+    "admin_save_oar": {
+        "group": "Region file management",
+        "description": "remotely allows to save a oar files of regions",
+        "ReturnedParameters": "<table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tbody><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td><i>saved</i></td><td> true when successfully saved xml</td><td> true, false</td></tr></tbody></table>",
+        "ErrorMessages": "",
+        "Notes": "",
+        "Required": {
+            "region_name": {
+                "default": "",
+                "type":  "string",
+                "description": "Name of the region, optionaly use region_id"
+            },
+            "filename": {
+                "default": "",
+                "type":  "string",
+                "description": "file name of terrain file"
+            }
+        },
+        "Optional": {
+            "region_id": {
+                "default": "",
+                "type":  "uuid",
+                "description": "region uuid of the region."
+            },
+            "noassets": {
+                "default": "",
+                "type":  "boolean",
+                "description": "save oar without objects"
+            },
+            "profile": {
+                "default": "",
+                "type":  "string",
+                "description": "add all names of creators from this world with link to profile. <url> of profile service."
+            },
+            "perm": {
+                "default": "",
+                "type":  "string",
+                "description": "objects with insufficient permissions will not be saved. C, T, CT."
+            }
+        }
+    }
+}

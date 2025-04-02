@@ -1,0 +1,55 @@
+AgentManagement.json
+    admin_teleport_agent
+    admin_get_agents
+
+UserAccountManagement.json
+
+    admin_create_user
+    admin_create_user_email
+    admin_exists_user
+    admin_update_user
+    admin_authenticate_user 
+
+RegionManagement.json
+
+    admin_broadcast
+    admin_close_region
+    admin_create_region
+    admin_delete_region
+    admin_modify_region
+    admin_region_query
+    admin_restart
+    admin_shutdown 
+
+RegionFileManagement.json
+
+    admin_load_heightmap
+    admin_load_oar
+    admin_load_xml
+    admin_save_heightmap
+    admin_save_oar
+    admin_save_xml 
+
+RegionAccessManagement.json
+
+    admin_acl_list
+    admin_acl_clear
+    admin_acl_add
+    admin_acl_remove 
+
+EstateManagement.json
+
+    admin_estate_reload 
+
+Administration.json
+
+    admin_console_command 
+
+Misc.json
+
+    admin_dialog
+    admin_reset_land
+    admin_refresh_search
+    admin_refresh_map
+    admin_get_opensim_version
+    admin_get_agent_count 

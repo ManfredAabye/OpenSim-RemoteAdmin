@@ -1,0 +1,170 @@
+{
+    "admin_create_user": {
+        "group": "User account management",
+        "description": "remotely allows to create a new user",
+        "ReturnedParameters": "<table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tbody><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> <i>success</i></td><td> true when successfull</td><td> true, false</td></tr><tr><td><i>avatar_uuid</i></td><td> new avatar uuid, zero uuid when error occured</td><td></td></tr></tbody></table>",
+        "ErrorMessages": "avatar_uuid returnes zero uuid when an error occures",
+        "Notes": "<ul><li> This function is only available to Robust</li><li> This function is the same Identical to admin_create_user_email.</li></ul>",
+        "Required": {
+            "user_firstname": {
+                "default": "",
+                "type":  "string",
+                "description": "first name of user"
+            },
+            "user_lastname": {
+                "default": "",
+                "type":  "string",
+                "description": "last name of user"
+            },
+            "user_password": {
+                "default": "",
+                "type":  "string",
+                "description": "password of user"
+            },
+            "start_region_x": {
+                "default": "",
+                "type":  "int",
+                "description": "start region x position in grid"
+            },
+            "start_region_y": {
+                "default": "",
+                "type":  "int",
+                "description": "start region y position in grid"
+            }
+        },
+        "Optional": {
+            "user_email": {
+                "default": "",
+                "type":  "string",
+                "description": "email adress of user"
+            }
+        }
+    },
+    "admin_create_user_email": {
+        "group": "User account management",
+        "description": "remotely allows to create a new user (alias for admin_create_user)",
+        "ReturnedParameters": "<table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tbody><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> <i>success</i></td><td> true when successfull</td><td> true, false</td></tr><tr><td><i>avatar_uuid</i></td><td> new avatar uuid, zero uuid when error occured</td><td></td></tr></tbody></table>",
+        "ErrorMessages": "avatar_uuid returnes zero uuid when an error occures",
+        "Notes": "<ul><li> This function is only available to Robust</li><li> This function is the same Identical to admin_create_user_email.</li></ul>",
+        "Required": {
+            "user_firstname": {
+                "default": "",
+                "type":  "string",
+                "description": "first name of user"
+            },
+            "user_lastname": {
+                "default": "",
+                "type":  "string",
+                "description": "last name of user"
+            },
+            "user_password": {
+                "default": "",
+                "type":  "string",
+                "description": "password of user"
+            },
+            "start_region_x": {
+                "default": "",
+                "type":  "int",
+                "description": "start region x position in grid"
+            },
+            "start_region_y": {
+                "default": "",
+                "type":  "int",
+                "description": "start region y position in grid"
+            }
+        },
+        "Optional": {
+            "user_email": {
+                "default": "",
+                "type":  "string",
+                "description": "email adress of user"
+            }
+        }
+    },
+    "admin_exists_user": {
+        "group": "User account management",
+        "description": "remotely allows to check if a certain user account exists",
+        "ReturnedParameters": "<table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tbody><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> <i>success</i></td><td> true when successfull</td><td> true, false</td></tr><tr><td> <i>user_firstname</i></td><td> first name of user</td><td></td></tr><tr><td> <i>user_lastname</i></td><td> last name of user</td><td></td></tr><tr><td><i>lastlogin</i></td><td> timestamp of last user login</td><td> This is a Unix timestamp.  This was buggy before OpenSimulator git master f064075 (post 0.7.5) where the timestamp was returned in a timestamp field in lastlogin instead.  If the user did not exist, this value is 0.</td></tr></tbody></table>",
+        "ErrorMessages": "No error messages.",
+        "Notes": "",
+        "Required": {
+            "user_firstname": {
+                "default": "",
+                "type":  "string",
+                "description": "first name of user"
+            },
+            "user_lastname": {
+                "default": "",
+                "type":  "string",
+                "description": "last name of user"
+            }
+        },
+        "Optional": "No optional parameters"
+    },
+    "admin_update_user": {
+        "group": "User account management",
+        "description": "remotely allows to update the password and start region of users",
+        "ReturnedParameters": "<table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tbody><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> <i>success</i></td><td> true when successfull</td><td> true, false</td></tr><tr><td><i>avatar_uuid</i></td><td> new avatar uuid, zero uuid when error occured</td><td></td></tr></tbody></table>",
+        "ErrorMessages": "avatar_uuid returnes zero uuid when an error occures.",
+        "Notes": "",
+        "Required": {
+            "user_firstname": {
+                "default": "",
+                "type":  "string",
+                "description": "first name of user"
+            },
+            "user_lastname": {
+                "default": "",
+                "type":  "string",
+                "description": "last name of user"
+            }         
+        },
+        "Optional": {
+            "user_password": {
+                "default": "",
+                "type":  "string",
+                "description": "password of user"
+            },
+            "start_region_x": {
+                "default": "",
+                "type":  "int",
+                "description": "start region x position in grid start_region_y required"
+            },
+            "start_region_y": {
+                "default": "",
+                "type":  "int",
+                "description": "start region y position in grid start_region_x required"
+            }           
+        }
+    },
+    "admin_authenticate_user": {
+        "group": "User account management",
+        "description": "remotely allows to authenticate an user remotely. This feature is part of the development branch, after the 0.7.6 OpenSim release.",
+        "ReturnedParameters": "<table cellspacing=\"0\" cellpadding=\"4\" border=\"1\"><tbody><tr><th> parameter</th><th> Description</th><th> Values</th></tr><tr><td> <i>success</i></td><td> true when successful</td><td> true, false</td></tr><tr><td><i>error</i></td><td> the error that occurred (ie: authentication failed messages)</td><td></td></tr><tr><td><i>token</i></td><td> the authentication token</td><td></td></tr></tbody></table>",
+        "ErrorMessages": "<p><i>error</i> is set to \"scene does not exist\" in case no scene is available.</p><p><i>error</i> is set to \"avatar FIRSTNAME LASTNAME does not exist\" in case the avatar with FIRSTNAME LASTNAME does not exist.</p><p><i>error</i> is set to \"no password provided for FIRSTNAME LASTNAME\" in case the call did not include a password for the avatar named FISTNAME LASTNAME.</p><p><i>error</i> is set to \"no token lifetime provided for FISTNAME LASTNAME\" if the <i>token</i> parameter has been omitted from the call.</p><p><i>error</i> is set to \"token lifetime longer than 30s for FISTNAME LASTNAME\" in case the request asked for <i>token_lifetime</i> larger than 30.</p><p><i>error</i> is set to \"no authentication module loaded\" in case no authentication module could be loaded.</p><p><i>error</i> is set to \"authentication failed for FIRSTNAME LASTNAME\" in case the authentication failed for user FISTNAME LASTNAME.</p>",
+        "Notes": "",
+        "Required": {
+            "user_firstname": {
+                "default": "",
+                "type":  "string",
+                "description": "first name of user"
+            },
+            "user_lastname": {
+                "default": "",
+                "type":  "string",
+                "description": "last name of user"
+            },
+             "user_password": {
+                "default": "",
+                "type":  "string",
+                "description": "password of user"
+            },           
+            "token_lifetime": {
+                "default": "",
+                "type":  "int",
+                "description": "the lifetime of the authentication token (max: 30s)"
+            }
+        },
+        "Optional": "No optional parameters"
+    }
+}
